@@ -4,6 +4,17 @@
   "module": "dist/core.esm.js",
   "version": "0.1.0",
   "license": "MIT",
+  "homepage": "https://github.com/feature-set/client#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feature-set/client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/feature-set/client/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [

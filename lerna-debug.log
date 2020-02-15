@@ -1,0 +1,23 @@
+0 silly argv {
+0 silly argv   _: [ 'create' ],
+0 silly argv   lernaVersion: '3.20.2',
+0 silly argv   '$0': '/Users/deric.cain/Code/client/node_modules/.bin/lerna',
+0 silly argv   name: '@feature-set/core'
+0 silly argv }
+1 notice cli v3.20.2
+2 verbose rootPath /Users/deric.cain/Code/client
+3 info versioning independent
+4 warn ENOREMOTE No git remote found, skipping repository property
+5 error Error: canceled
+5 error     at Interface.<anonymous> (/Users/deric.cain/Code/client/node_modules/read/lib/read.js:66:13)
+5 error     at Interface.emit (events.js:321:20)
+5 error     at Interface._ttyWrite (readline.js:864:16)
+5 error     at ReadStream.onkeypress (readline.js:203:10)
+5 error     at ReadStream.emit (events.js:321:20)
+5 error     at emitKeys (internal/readline/utils.js:450:14)
+5 error     at emitKeys.next (<anonymous>)
+5 error     at ReadStream.onData (readline.js:1131:36)
+5 error     at ReadStream.emit (events.js:321:20)
+5 error     at addChunk (_stream_readable.js:297:12)
+5 error     at readableAddChunk (_stream_readable.js:273:9)
+5 error     at ReadStream.Readable.push (_stream_readable.js:214:10)

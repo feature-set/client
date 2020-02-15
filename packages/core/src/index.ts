@@ -1,9 +1,10 @@
-interface Config {
+export interface Config {
   apiKey: string;
   appId: string;
+  baseUrl?: string;
 }
 
-interface Feature {
+export interface Feature {
   key: string;
   name: string;
   isEnabled: boolean;
@@ -14,23 +15,28 @@ export class Core {
     return window.btoa(`${this.appId} ${this.apiKey}`);
   }
 
-  public constructor({ apiKey, appId }: Config) {
+  public constructor({ apiKey, appId, baseUrl = 'https://featureset.io/api/features' }: Config) {
     this.apiKey = apiKey;
     this.appId = appId;
+    this.baseUrl = baseUrl;
   }
 
   public async getFeatures(): Promise<Feature[]> {
-    const res = await fetch(this.baseUrl, {
-      headers: {
-        Authorization: this.authHeader,
-      },
-    });
-    return await res.json();
+    try {
+      const res = await fetch(this.baseUrl, {
+        headers: {
+          Authorization: this.authHeader,
+        },
+      });
+      return await res.json();
+    } catch (error) {
+      throw new Error(error);
+    }
   }
 
   private readonly apiKey: string;
 
   private readonly appId: string;
 
-  private baseUrl = 'https://featureset.io/api/features';
+  private readonly baseUrl: string;
 }

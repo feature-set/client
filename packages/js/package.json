@@ -1,0 +1,42 @@
+{
+  "name": "@feature-set/js",
+  "author": "FeatureSet",
+  "module": "dist/js.esm.js",
+  "version": "0.1.0",
+  "license": "MIT",
+  "homepage": "https://github.com/feature-set/client#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feature-set/client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/feature-set/client/issues"
+  },
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "dependencies": {
+    "@feature-set/core": "../../packages/core"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.2",
+    "husky": "^4.2.3",
+    "tsdx": "^0.12.3",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.5"
+  }
+}

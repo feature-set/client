@@ -1,5 +1,6 @@
 {
   "name": "client",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -19,5 +20,10 @@
     "tsdx": "^0.12.3",
     "tslib": "^1.10.0",
     "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "@feature-set/core": "file:packages/core",
+    "@feature-set/js": "file:packages/js",
+    "@feature-set/react": "file:packages/react"
   }
 }

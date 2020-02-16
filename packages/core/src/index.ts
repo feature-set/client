@@ -15,7 +15,11 @@ export class Core {
     return window.btoa(`${this.appId} ${this.apiKey}`);
   }
 
-  public constructor({ apiKey, appId, baseUrl = 'https://featureset.io/api/features' }: Config) {
+  public constructor({
+    apiKey,
+    appId,
+    baseUrl = 'https://featureset.io/api/features',
+  }: Config) {
     this.apiKey = apiKey;
     this.appId = appId;
     this.baseUrl = baseUrl;
@@ -28,7 +32,8 @@ export class Core {
           Authorization: this.authHeader,
         },
       });
-      return await res.json();
+      const feat = await res.json();
+      return feat.data;
     } catch (error) {
       throw new Error(error);
     }

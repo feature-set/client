@@ -30,7 +30,10 @@ export class Features {
     this.features.forEach(f => (this.featureMap[f.key] = f.isEnabled));
   };
 
-  public isEnabled = (featureName: string, defaultEnabled: boolean = false): boolean => {
+  public isEnabled = (
+    featureName: string,
+    defaultEnabled: boolean = false,
+  ): boolean => {
     if (featureName in this.featureMap) {
       return this.featureMap[featureName];
     }

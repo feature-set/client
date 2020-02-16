@@ -22,6 +22,7 @@ interface FeatureContext {
   baseFeatures: Feature[];
   features: FeatureMap;
   isEnabled(featureName: string, defaultEnabled: boolean): boolean;
+  isLoading: boolean;
 }
 
 const featureContext = createContext({} as FeatureContext);
@@ -35,27 +36,26 @@ interface FeaturesProps {
   baseUrl?: string;
 }
 
-
 export function Features({ children, ...props }: FeaturesProps) {
   const f = useRef(new FeaturesJs(props));
   const [v, setV] = useState({
     baseFeatures: f.current.features,
     features: f.current.featureMap,
     isEnabled: f.current.isEnabled,
+    isLoading: true,
   });
 
   useEffect(() => {
     (async () => {
       await f.current.init();
-      console.log('RUN');
       setV({
         baseFeatures: f.current.features,
         features: f.current.featureMap,
         isEnabled: f.current.isEnabled,
-      })
+        isLoading: false,
+      });
     })();
   }, []);
-
 
   return <Provider value={v}>{children}</Provider>;
 }

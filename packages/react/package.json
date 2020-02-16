@@ -2,7 +2,7 @@
   "name": "@feature-set/react",
   "author": "FeatureSet",
   "module": "dist/react.esm.js",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "homepage": "https://github.com/feature-set/client#readme",
   "repository": {
@@ -24,7 +24,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
+    "lint": "tsdx lint  --fix",
     "prepare": "tsdx build"
   },
   "peerDependencies": {
